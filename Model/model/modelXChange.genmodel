@@ -20,6 +20,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXChange.ecore#//Konto/iBAN"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXChange.ecore#//Konto/bIC"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference modelXChange.ecore#//Konto/inhaber"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXChange.ecore#//Konto/kontostand"/>
       <genOperations ecoreOperation="modelXChange.ecore#//Konto/ueberweisen">
         <genParameters ecoreParameter="modelXChange.ecore#//Konto/ueberweisen/zielKonto"/>
         <genParameters ecoreParameter="modelXChange.ecore#//Konto/ueberweisen/betrag"/>

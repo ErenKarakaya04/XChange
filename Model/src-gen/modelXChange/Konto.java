@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link modelXChange.Konto#getIBAN <em>IBAN</em>}</li>
  *   <li>{@link modelXChange.Konto#getBIC <em>BIC</em>}</li>
  *   <li>{@link modelXChange.Konto#getInhaber <em>Inhaber</em>}</li>
+ *   <li>{@link modelXChange.Konto#getKontostand <em>Kontostand</em>}</li>
  * </ul>
  *
  * @see modelXChange.GeneratedPackage#getKonto()
@@ -108,6 +109,29 @@ public interface Konto extends EObject {
 	 * @generated
 	 */
 	EList<Inhaber> getInhaber();
+
+	/**
+	 * Returns the value of the '<em><b>Kontostand</b></em>' attribute.
+	 * The default value is <code>"0.0"</code>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Kontostand</em>' attribute.
+	 * @see #setKontostand(double)
+	 * @see modelXChange.GeneratedPackage#getKonto_Kontostand()
+	 * @model default="0.0" required="true"
+	 * @generated
+	 */
+	double getKontostand();
+
+	/**
+	 * Sets the value of the '{@link modelXChange.Konto#getKontostand <em>Kontostand</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Kontostand</em>' attribute.
+	 * @see #getKontostand()
+	 * @generated
+	 */
+	void setKontostand(double value);
 
 	/**
 	 * <!-- begin-user-doc -->

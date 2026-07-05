@@ -173,6 +173,16 @@ public class GeneratedPackageImpl extends EPackageImpl implements GeneratedPacka
 	 * @generated
 	 */
 	@Override
+	public EAttribute getKonto_Kontostand() {
+		return (EAttribute) kontoEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EOperation getKonto__Ueberweisen__Konto_double() {
 		return kontoEClass.getEOperations().get(0);
 	}
@@ -332,6 +342,7 @@ public class GeneratedPackageImpl extends EPackageImpl implements GeneratedPacka
 		createEAttribute(kontoEClass, KONTO__IBAN);
 		createEAttribute(kontoEClass, KONTO__BIC);
 		createEReference(kontoEClass, KONTO__INHABER);
+		createEAttribute(kontoEClass, KONTO__KONTOSTAND);
 		createEOperation(kontoEClass, KONTO___UEBERWEISEN__KONTO_DOUBLE);
 
 		inhaberEClass = createEClass(INHABER);
@@ -392,6 +403,8 @@ public class GeneratedPackageImpl extends EPackageImpl implements GeneratedPacka
 		initEReference(getKonto_Inhaber(), this.getInhaber(), this.getInhaber_Konto(), "inhaber", null, 1, 3,
 				Konto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getKonto_Kontostand(), ecorePackage.getEDouble(), "kontostand", "0.0", 1, 1, Konto.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = initEOperation(getKonto__Ueberweisen__Konto_double(), ecorePackage.getEBoolean(), "ueberweisen",
 				0, 1, IS_UNIQUE, IS_ORDERED);
@@ -420,7 +433,7 @@ public class GeneratedPackageImpl extends EPackageImpl implements GeneratedPacka
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEOperation(getBuchung__Buchen(), null, "buchen", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEOperation(getBuchung__Buchen(), ecorePackage.getEBoolean(), "buchen", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEOperation(getBuchung__Validate(), ecorePackage.getEBoolean(), "validate", 0, 1, IS_UNIQUE, IS_ORDERED);
 

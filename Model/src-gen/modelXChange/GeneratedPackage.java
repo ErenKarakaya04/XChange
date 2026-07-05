@@ -105,13 +105,22 @@ public interface GeneratedPackage extends EPackage {
 	int KONTO__INHABER = 3;
 
 	/**
+	 * The feature id for the '<em><b>Kontostand</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int KONTO__KONTOSTAND = 4;
+
+	/**
 	 * The number of structural features of the '<em>Konto</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int KONTO_FEATURE_COUNT = 4;
+	int KONTO_FEATURE_COUNT = 5;
 
 	/**
 	 * The operation id for the '<em>Ueberweisen</em>' operation.
@@ -333,6 +342,17 @@ public interface GeneratedPackage extends EPackage {
 	EReference getKonto_Inhaber();
 
 	/**
+	 * Returns the meta object for the attribute '{@link modelXChange.Konto#getKontostand <em>Kontostand</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Kontostand</em>'.
+	 * @see modelXChange.Konto#getKontostand()
+	 * @see #getKonto()
+	 * @generated
+	 */
+	EAttribute getKonto_Kontostand();
+
+	/**
 	 * Returns the meta object for the '{@link modelXChange.Konto#ueberweisen(modelXChange.Konto, double) <em>Ueberweisen</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -533,6 +553,14 @@ public interface GeneratedPackage extends EPackage {
 		 * @generated
 		 */
 		EReference KONTO__INHABER = eINSTANCE.getKonto_Inhaber();
+
+		/**
+		 * The meta object literal for the '<em><b>Kontostand</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute KONTO__KONTOSTAND = eINSTANCE.getKonto_Kontostand();
 
 		/**
 		 * The meta object literal for the '<em><b>Ueberweisen</b></em>' operation.
