@@ -56,7 +56,7 @@ public enum Waehrung implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	NKR(3, "NKR", "NKR");
+	NKR(3, "NOK", "NOK");
 
 	/**
 	 * The '<em><b>EUR</b></em>' literal value.

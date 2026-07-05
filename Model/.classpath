@@ -8,8 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
-	<classpathentry kind="lib" path="/home/paulk/Documents/XChange/Model/lib/gson-2.10.1.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21"/>
-	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="C:\Users\admin\Documents\GitHub\XChange\Model\lib\gson-2.10.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

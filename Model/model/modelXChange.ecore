@@ -5,7 +5,7 @@
     <eLiterals name="EUR"/>
     <eLiterals name="USD" value="1"/>
     <eLiterals name="SEK" value="2"/>
-    <eLiterals name="NKR" value="3"/>
+    <eLiterals name="NOK" value="3" literal="NOK"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Konto">
     <eOperations name="ueberweisen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

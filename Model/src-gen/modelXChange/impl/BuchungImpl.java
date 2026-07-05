@@ -277,7 +277,9 @@ public class BuchungImpl extends MinimalEObjectImpl.Container implements Buchung
 	 */
 	@Override
 	public boolean validate() {
-		return this.quellKonto.getKontostand() - this.betrag >= 0.0;
+		return this.quellKonto != null 
+				&& this.zielKonto != null
+				&& this.quellKonto.getKontostand() - this.betrag >= 0.0;
 	}
 
 	/**

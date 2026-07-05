@@ -13,7 +13,7 @@
       <genEnumLiterals ecoreEnumLiteral="modelXChange.ecore#//Waehrung/EUR"/>
       <genEnumLiterals ecoreEnumLiteral="modelXChange.ecore#//Waehrung/USD"/>
       <genEnumLiterals ecoreEnumLiteral="modelXChange.ecore#//Waehrung/SEK"/>
-      <genEnumLiterals ecoreEnumLiteral="modelXChange.ecore#//Waehrung/NKR"/>
+      <genEnumLiterals ecoreEnumLiteral="modelXChange.ecore#//Waehrung/NOK"/>
     </genEnums>
     <genClasses ecoreClass="modelXChange.ecore#//Konto">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute modelXChange.ecore#//Konto/waehrung"/>

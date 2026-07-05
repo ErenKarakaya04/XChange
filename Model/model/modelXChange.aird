@@ -5,7 +5,7 @@
     <semanticResources>modelXChange.genmodel</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_NmQ84Hh9EfGgK7KZu_gfaA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']"/>
-      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NoDsoHh9EfGgK7KZu_gfaA" name="modelXChange" repPath="#_NnY-QHh9EfGgK7KZu_gfaA" changeId="1783264175443">
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_NoDsoHh9EfGgK7KZu_gfaA" name="modelXChange" repPath="#_NnY-QHh9EfGgK7KZu_gfaA" changeId="1783274862565">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']"/>
         <target xmi:type="ecore:EPackage" href="modelXChange.ecore#/"/>
       </ownedRepresentationDescriptors>
@@ -223,9 +223,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Snh3U3h9EfGgK7KZu_gfaA" name="NKR" tooltipText="">
-        <target xmi:type="ecore:EEnumLiteral" href="modelXChange.ecore#//Waehrung/NKR"/>
-        <semanticElements xmi:type="ecore:EEnumLiteral" href="modelXChange.ecore#//Waehrung/NKR"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" uid="_Snh3U3h9EfGgK7KZu_gfaA" name="NOK" tooltipText="">
+        <target xmi:type="ecore:EEnumLiteral" href="modelXChange.ecore#//Waehrung/NOK"/>
+        <semanticElements xmi:type="ecore:EEnumLiteral" href="modelXChange.ecore#//Waehrung/NOK"/>
         <ownedStyle xmi:type="diagram:BundledImage" uid="_Snh3VHh9EfGgK7KZu_gfaA" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EEnum']/@subNodeMappings[name='EC%20EEnumLiteral']/@style"/>
         </ownedStyle>
