@@ -96,7 +96,7 @@ public interface Buchung extends EObject {
 	 * @model
 	 * @generated
 	 */
-	void buchen();
+	boolean buchen();
 
 	/**
 	 * <!-- begin-user-doc -->

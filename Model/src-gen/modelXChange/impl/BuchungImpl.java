@@ -2,7 +2,17 @@
  */
 package modelXChange.impl;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.InvocationTargetException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import modelXChange.Buchung;
 import modelXChange.GeneratedPackage;
@@ -203,25 +213,71 @@ public class BuchungImpl extends MinimalEObjectImpl.Container implements Buchung
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
-	public void buchen() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean buchen() {
+		if(validate()) {
+			double conversionRate = 1.0;
+			if(quellKonto.getWaehrung() != zielKonto.getWaehrung()) {
+				conversionRate = getExchangerate();
+			}
+			if(conversionRate > 0.0) {
+				this.quellKonto.setKontostand(this.quellKonto.getKontostand()- this.betrag);
+				this.zielKonto.setKontostand(this.zielKonto.getKontostand()+ this.betrag * conversionRate);
+				return true;
+			}
+		}
+		return false;
 	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@SuppressWarnings("deprecation")
+	public double getExchangerate() {
+
+	    String urlStr = "https://v6.exchangerate-api.com/v6/510f7dcfda5add27debafbca/latest/"
+	            + quellKonto.getWaehrung().getName();
+
+	    try {
+	        URL url = new URL(urlStr);
+	        HttpURLConnection request = (HttpURLConnection) url.openConnection();
+	        request.setRequestMethod("GET");
+	        request.connect();
+
+	        // JSON lesen (MODERN korrekt)
+	        JsonObject jsonobj = JsonParser
+	                .parseReader(new InputStreamReader(request.getInputStream()))
+	                .getAsJsonObject();
+
+	        double rate = jsonobj
+	                .getAsJsonObject("conversion_rates")
+	                .get(zielKonto.getWaehrung().getName())
+	                .getAsDouble();
+
+	        request.disconnect();
+
+	        return rate;
+
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return 0.0;
+	    }
+	}
+	
+	
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public boolean validate() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.quellKonto.getKontostand() - this.betrag >= 0.0;
 	}
 
 	/**
@@ -315,8 +371,7 @@ public class BuchungImpl extends MinimalEObjectImpl.Container implements Buchung
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 		case GeneratedPackage.BUCHUNG___BUCHEN:
-			buchen();
-			return null;
+			return buchen();
 		case GeneratedPackage.BUCHUNG___VALIDATE:
 			return validate();
 		}

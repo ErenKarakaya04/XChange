@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 
 import java.util.Collection;
 
+import modelXChange.Buchung;
+import modelXChange.GeneratedFactory;
 import modelXChange.GeneratedPackage;
 import modelXChange.Inhaber;
 import modelXChange.Konto;
@@ -37,6 +39,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link modelXChange.impl.KontoImpl#getIBAN <em>IBAN</em>}</li>
  *   <li>{@link modelXChange.impl.KontoImpl#getBIC <em>BIC</em>}</li>
  *   <li>{@link modelXChange.impl.KontoImpl#getInhaber <em>Inhaber</em>}</li>
+ *   <li>{@link modelXChange.impl.KontoImpl#getKontostand <em>Kontostand</em>}</li>
  * </ul>
  *
  * @generated
@@ -111,6 +114,26 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @ordered
 	 */
 	protected EList<Inhaber> inhaber;
+
+	/**
+	 * The default value of the '{@link #getKontostand() <em>Kontostand</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKontostand()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double KONTOSTAND_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getKontostand() <em>Kontostand</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getKontostand()
+	 * @generated
+	 * @ordered
+	 */
+	protected double kontostand = KONTOSTAND_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -221,10 +244,37 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 	 * @generated
 	 */
 	@Override
+	public double getKontostand() {
+		return kontostand;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setKontostand(double newKontostand) {
+		double oldKontostand = kontostand;
+		kontostand = newKontostand;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, GeneratedPackage.KONTO__KONTOSTAND, oldKontostand,
+					kontostand));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@Override
 	public boolean ueberweisen(Konto zielKonto, double betrag) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		GeneratedFactory factory = GeneratedFactory.eINSTANCE;
+		Buchung buchung = factory.createBuchung();
+		buchung.setBetrag(betrag);
+		buchung.setQuellKonto(this);
+		buchung.setZielKonto(zielKonto);
+		return buchung.buchen();
 	}
 
 	/**
@@ -272,6 +322,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 			return getBIC();
 		case GeneratedPackage.KONTO__INHABER:
 			return getInhaber();
+		case GeneratedPackage.KONTO__KONTOSTAND:
+			return getKontostand();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +350,9 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 			getInhaber().clear();
 			getInhaber().addAll((Collection<? extends Inhaber>) newValue);
 			return;
+		case GeneratedPackage.KONTO__KONTOSTAND:
+			setKontostand((Double) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -322,6 +377,9 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 		case GeneratedPackage.KONTO__INHABER:
 			getInhaber().clear();
 			return;
+		case GeneratedPackage.KONTO__KONTOSTAND:
+			setKontostand(KONTOSTAND_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -342,6 +400,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 			return BIC_EDEFAULT == null ? bIC != null : !BIC_EDEFAULT.equals(bIC);
 		case GeneratedPackage.KONTO__INHABER:
 			return inhaber != null && !inhaber.isEmpty();
+		case GeneratedPackage.KONTO__KONTOSTAND:
+			return kontostand != KONTOSTAND_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -377,6 +437,8 @@ public class KontoImpl extends MinimalEObjectImpl.Container implements Konto {
 		result.append(iBAN);
 		result.append(", bIC: ");
 		result.append(bIC);
+		result.append(", kontostand: ");
+		result.append(kontostand);
 		result.append(')');
 		return result.toString();
 	}
